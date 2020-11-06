@@ -1,0 +1,24 @@
+:root{
+    font-size: 62.5%px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    color: #4F4C4C;
+    background: #F3FFEF;
+}
+
+body, input, button, textarea{
+    font: 400 1rem/1 'Roboto', sans-serif;
+}
+
+h1{
+    color: #01863E;
+    font-family: 'Sansita', sans-serif;
+}
