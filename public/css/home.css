@@ -19,7 +19,11 @@
     border-radius: .5rem;
     border: none;
     color: #ffffff;
-    
+    cursor: pointer;
+}
+
+#donate:hover{
+    background:#0ca81b;
 }
 
 #adoption{
@@ -29,6 +33,11 @@
     border-radius: .5rem;
     border: none;
     color: #ffffff;
+    cursor: pointer;
+}
+
+#adoption:hover{
+    background:#0ca81b;
 }
 
 .container{
@@ -40,10 +49,25 @@
     background: linear-gradient(180deg, #24611F 0%, #67D93F 100%);
 }
 
+.text-page{
+    min-height: 100vh;
+    margin-right: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.name-page{
+    font-size: 1.8rem;
+}
+
+#pets{
+    margin-left: 8rem;
+}
 
 #background-image{
     width: 33rem;
     position: absolute;
-    right: 40%;
+    right: 35%;
     top: 20%;
 }
