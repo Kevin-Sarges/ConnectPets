@@ -1,7 +1,7 @@
 function donate(){
-    console.log('cheguei!!');
+    window.location.href = '/donate';
 }
 
 function adoption(){
-    console.log('cheguei!!');
+    window.location.href = '/adoption';
 }
