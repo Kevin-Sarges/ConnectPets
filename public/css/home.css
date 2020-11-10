@@ -51,7 +51,7 @@
 
 .text-page{
     min-height: 100vh;
-    margin-right: 40rem;
+    margin-right: 32rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -68,6 +68,44 @@
 #background-image{
     width: 33rem;
     position: absolute;
-    right: 35%;
+    right: 30%;
     top: 20%;
+}
+
+@media (max-width: 1200px){
+    #background-image{
+        width: 0;
+    }
+
+    .text-page{
+        min-height: 100vh;
+        margin-right: 275px;
+        margin-left: 75px;
+    }
+}
+
+
+@media (max-width: 1024px){
+    #background-image{
+        width: 0;
+    }
+
+    .text-page{
+        min-height: 100vh;
+        margin-right: 275px;
+        
+    }
+}
+
+@media (max-width: 880px){
+    .text-page{
+        min-height: 100vh;
+        margin-right: 105px;
+    } 
+}
+
+@media (max-width: 699px){
+    .container{
+        min-width: 100vw;
+    }
 }
