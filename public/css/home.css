@@ -51,7 +51,8 @@
 
 .text-page{
     min-height: 100vh;
-    margin-right: 32rem;
+    min-width: 30vw;
+    margin-right: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -86,6 +87,10 @@
 
 
 @media (max-width: 1024px){
+    .container{
+        padding: 290px 130px;
+    }
+
     #background-image{
         width: 0;
     }
@@ -98,6 +103,10 @@
 }
 
 @media (max-width: 880px){
+    .container{
+        padding: 155px 95px;
+    }
+
     .text-page{
         min-height: 100vh;
         margin-right: 105px;
@@ -106,6 +115,15 @@
 
 @media (max-width: 699px){
     .container{
+        padding: 130px 142px;
         min-width: 100vw;
+    }
+
+    #donate{
+        padding: 15px 80px;
+    }
+
+    #adoption{
+        padding: 15px 80px;
     }
 }
