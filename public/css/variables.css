@@ -1,0 +1,10 @@
+:root{
+    --button-background: #188a24;
+    --button-background-hover:#0ca81b;
+    --button-text: #ffffff;
+    --sidebar-background: linear-gradient(180deg, #24611F 25%, #67D93F 100%);
+    --body-background: #F3FFEF;
+    --body-text: #4F4C4C;
+    --title-text: #01863E;
+    font-size: 62.5%px;
+}
