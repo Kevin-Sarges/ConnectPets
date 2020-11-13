@@ -1,0 +1,20 @@
+header{
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--text);
+    background: var(--header-background);
+}
+
+a .#seta{
+    transition: opacity 0.2s;
+}
+
+a #seta:hover{
+    opacity: .5;
+}
+
+h2{
+    font: 400 1.8rem 'Sansita', sans-serif;
+}
