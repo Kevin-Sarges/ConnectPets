@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/partials/variables.css">
-    <link rel="stylesheet" href="/css/partials/adopition.css">
+    <link rel="stylesheet" href="/css/partials/donate.css">
     <link rel="stylesheet" href="/css/partials/header.css">
     <link rel="stylesheet" href="/css/partials/animation.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -20,5 +20,42 @@
         </a>
         <h2>Connect Pets</h2>
     </header>
+
+    <main class="dados">
+        <form action="save-donate" method="POST" onsubmit="validate(event)">
+            <fieldset class="inputs">
+                <legend>Preecha alguns dados</legend>
+                
+                <div class="input-block">
+                    <label for="photo">Foto do pet</label>
+                    <input class="file" type="file" id="photo" name="photo" required>
+                </div>
+                <div class="input-block">
+                    <label for="age">Idade</label>
+                    <input id="age" name="age" required>
+                </div>
+                <div class="input-block">
+                    <label for="sex">Sexo</label>
+                    <input id="sex" name="sex" required>
+                </div>
+                <div class="input-block">
+                    <label for="race">Raça <span>(Se você não sabe coloque como "Desconhecida"!)</span></label>
+                    <input id="sex" name="sex" required>
+                </div>
+                <div class="input-block">
+                    <label for="name">Nome do doador</label>
+                    <input id="name" name="name" required>
+                </div>
+                <div class="input-block">
+                    <label for="whatsapp">Numero do whatsapp</label>
+                    <input id="whatsapp" name="whatsapp" required>
+                </div>
+
+                <footer>
+                    <button id="button">Cadastrar</button>
+                </footer>
+            </fieldset>
+        </form>
+    </main>
 </body>
 </html>
