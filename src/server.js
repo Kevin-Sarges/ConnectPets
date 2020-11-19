@@ -1,6 +1,6 @@
-const routes = require('./routes');
+const server = require('./pages');
 const port = 5000;
 
-routes.listen(process.env.PORT || port, () => {
+server.listen(process.env.PORT || port, () => {
     console.log(`server iniciado -> http://localhost:${port}`);
 });
