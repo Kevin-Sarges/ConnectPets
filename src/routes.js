@@ -1,18 +1,18 @@
 const express = require('express');
-const server = express();
+const routes = express();
 
-server.get('/', (req, res) => {
+routes.get('/', (req, res) => {
     return res.sendFile(__dirname + '/view/index.html');
 });
 
-server.get('/donate', (req, res) => {
+routes.get('/donate', (req, res) => {
     return res.sendFile(__dirname + '/view/donate.html');
 });
 
-server.get('/adoption',  (req, res) => {
+routes.get('/adoption',  (req, res) => {
     return res.sendFile(__dirname + '/view/adoption.html');
 });
 
-server.use(express.static('public'));
+routes.use(express.static('public'));
 
-module.exports = server;
+module.exports = routes;
