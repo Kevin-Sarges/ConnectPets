@@ -79,6 +79,10 @@ body{
 }
 
 @media (max-width: 1200px){
+    #background-image{
+        width: 0;
+    }
+
     .text-page{
         min-height: 100vh;
         min-width: 36vh;
