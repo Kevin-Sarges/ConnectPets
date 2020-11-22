@@ -23,22 +23,24 @@
 
     <main class="animate-up">
         <div class="container">
-            <div class="pets">
-                <img id="pet-image" src="/img/cat.jpg" alt="Pet">
-
-                <div class="description">
-                    <p>Doador: Kevin</p>
-                    <p>Raça: indefinida</p>
-                    <p>Idade: 2 meses</p>
-                    <p>Sexo: macho</p>
+            {{#each adoption}}
+                <div class="pets">
+                    <img id="pet-image" src="{{pet.photo}}" alt="Pet">
+                    
+                    <div class="description">
+                        <p>Doador: {{pet.name}}</p>
+                        <p>Raça: {{pet.race}}</p>
+                        <p>Idade: {{pet.age}}</p>
+                        <p>Sexo: {{pet.sex}}</p>
+                    </div>
                 </div>
-            </div>
-            <footer class="whatsapp">
-                <button id="whatsapp" type="button" onclick="whatsapp()">
-                    <img src="/img/whatsapp.svg" alt="whatsapp">
-                    <p>Entre em contato</p>
-                </button>
-            </footer>
+                <footer class="whatsapp">
+                    <button id="whatsapp" type="button" onclick="whatsapp()">
+                        <img src="/img/whatsapp.svg" alt="whatsapp">
+                        <p>Entre em contato</p>
+                    </button>
+                </footer>
+            {{/each}}
         </div>
     </main>
     <script src="/script/main.js"></script>

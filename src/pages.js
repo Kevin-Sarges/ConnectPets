@@ -1,18 +1,49 @@
-const express = require('express');
-const server = express();
+const Database = require('./database/db');
+const donatePet = require('./database/donatePet');
 
-server.get('/', (req, res) => {
-    return res.sendFile(__dirname + '/view/index.html');
-});
+module.exports = {
+    index(req, res) {
+        return res.render('index');
+    },
 
-server.get('/donate', (req, res) => {
-    return res.sendFile(__dirname + '/view/donate.html');
-});
+    async adoption(req, res) {
+        try {
+            const db = await Database;
+            const adoption = await db.all('SELECT * FROM pets');
+            return res.render('adoption', { adoption });
+        } catch (error) {
+            console.log(error);
+            return res.send('Erro no banco de dados!');
+        }
+    },
 
-server.get('/adoption',  (req, res) => {
-    return res.sendFile(__dirname + '/view/adoption.html');
-});
+    donate(req, res) {
+        return res.render('donate');
+    },
 
-server.use(express.static('public'));
+    async donatePet(req, res) {
+        const fielsds = req.body;
 
-module.exports = server;
+        if(Object.values(fielsds).includes('')){
+            return res.send('Todos os campos devem ser preenchidos!');
+        }
+
+        try {
+            const db = await Database
+            await donatePet(db, {
+                photo: fielsds.photo.toString(),
+                name: fielsds.name,
+                race: fielsds.race,
+                age: fielsds.age,
+                sex: fielsds.sex,
+                whatsapp: fielsds.whatsapp,
+            });
+
+            return res.redirect('/adoption');
+
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados!')
+        }
+    }
+}
