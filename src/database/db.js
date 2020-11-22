@@ -4,12 +4,12 @@ function execute(db){
     return db.exec(`
         CREATE TABLE IF NOT EXISTS pets (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            photo TEXT,
             name TEXT,
             race TEXT,
-            sex TEXT,
-            whatsapp TEXT,
             age TEXT,
-            photo TEXT
+            sex TEXT,
+            whatsapp TEXT
         );
     `);
 }

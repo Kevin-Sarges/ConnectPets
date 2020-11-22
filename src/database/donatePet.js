@@ -1,19 +1,19 @@
 function donatePets(db, pet){
     return db.run(`
         INSERT INTO pets(
+            photo,
             name,
             race,
             sex,
-            whatsapp,
             age,
-            photo
+            whatsapp
         ) VALUES (
+            "${pet.photo}",
             "${pet.name}",
             "${pet.race}",
-            "${pet.sex}",
-            "${pet.whatsapp}",
             "${pet.age}",
-            "${pet.photo}"
+            "${pet.sex}",
+            "${pet.whatsapp}"
         );
     `);
 }
