@@ -6,11 +6,11 @@ main{
 }
 
 .container{
-    margin: 1rem 0;
     min-height: 40vh;
 }
 
 .pets{
+    margin-top: 2.5rem;
     padding: 4rem 8rem;
     font-size: 1.3rem;
     display: flex;
@@ -50,7 +50,6 @@ button img{
     align-items: center;
     border: none;
     border-radius: .5rem;
-    color: var(--text);
     font: 400 1.3rem 'Sansita', sans-serif;
     background: var(--whatsapp-button);
     cursor: pointer;
@@ -58,6 +57,11 @@ button img{
 
 .whatsapp button:hover{
     background: var(--whatsapp-button-hover);
+}
+
+.whatsapp button a{
+    text-decoration: none;
+    color: var(--text);
 }
 
 @media (max-width: 599px){
