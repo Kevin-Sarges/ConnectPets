@@ -22,13 +22,13 @@
     </header>
 
     <main class="dados animate-up">
-        <form action="save-donate" method="POST" onsubmit="validate(event)">
+        <form action="save-donate" method="POST">
             <fieldset class="inputs">
                 <legend>Preecha alguns dados</legend>
                 
                 <div class="input-block">
                     <label for="photo">Foto do pet</label>
-                    <input class="file" type="file" id="photo" name="photo" required>
+                    <input class="file" type="file" id="photo" name="photo" accept="image/*" required>
                 </div>
                 <div class="input-block">
                     <label for="age">Idade</label>
