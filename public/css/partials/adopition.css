@@ -40,11 +40,11 @@ footer{
     background: var(--container-footer-pets);
 }
 
-button img{
+a img{
     margin-right: 1rem;
 }
 
-.whatsapp button{
+.whatsapp a{
     padding: .5rem 5rem;
     display: flex;
     align-items: center;
@@ -55,11 +55,11 @@ button img{
     cursor: pointer;
 }
 
-.whatsapp button:hover{
+.whatsapp a:hover{
     background: var(--whatsapp-button-hover);
 }
 
-.whatsapp button a{
+.whatsapp a{
     text-decoration: none;
     color: var(--text);
 }
@@ -96,7 +96,7 @@ button img{
         padding: 10px 20px;
     }
 
-    .whatsapp button{
+    .whatsapp a{
         margin: 2px 60px;
         padding: 8px 13px;
         font-size: 15px;
@@ -123,7 +123,7 @@ button img{
         padding: 10px 0px;
     }
 
-    .whatsapp button{
+    .whatsapp a{
         margin: 2px 60px;
         padding: 4px 13px;
         font-size: 15px;
