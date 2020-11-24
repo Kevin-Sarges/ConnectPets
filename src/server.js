@@ -1,12 +1,11 @@
 const express = require('express');
-const server = express();
 const path = require('path');
 const pages = require('./pages');
+const server = express();
 const port = 5000;
 
 server.use(express.urlencoded({ extended: true}));
 server.use(express.static('public'));
-
 server.set('views',path.join(__dirname, 'views'));
 server.set('view engine', 'hbs');
 
