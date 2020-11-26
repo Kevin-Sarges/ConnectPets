@@ -12,7 +12,7 @@ server.set('view engine', 'hbs');
 server.get('/', pages.index);
 server.get('/adoption', pages.adoption);
 server.get('/donate', pages.donate);
-server.post('/save-donate', pages.donatePet);
+server.post('/donatePet', pages.donatePet);
 
 server.listen(process.env.PORT || port, () => {
     console.log(`server iniciado -> http://localhost:${port}`);
