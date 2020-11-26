@@ -22,13 +22,13 @@
     </header>
 
     <main class="dados animate-up">
-        <form action="save-donate" method="POST">
+        <form action="save-donate" method="POST" enctype="multipart/form-data" onsubmit="Checkfiles(this)">
             <fieldset class="inputs">
                 <legend>Preecha alguns dados</legend>
                 
                 <div class="input-block">
                     <label for="photo">Foto do pet</label>
-                    <input class="file" type="file" id="photo" name="photo" accept="image/*" required>
+                    <input class="file" type="file" id="photo" name="photo" accept="image/png, image/jpeg" required>
                 </div>
                 <div class="input-block">
                     <label for="age">Idade</label>
@@ -57,5 +57,7 @@
             </fieldset>
         </form>
     </main>
+
+    <script src="/script/checkFiles.js"></script>
 </body>
 </html>
