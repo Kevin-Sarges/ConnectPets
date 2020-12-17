@@ -87,3 +87,9 @@ footer{
 #button:hover{
     background: var(--whatsapp-button-hover);
 }
+
+@media(max-width: 280px){
+    fieldset legend{
+        font-size: 15px;
+    }
+}
