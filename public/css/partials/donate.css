@@ -9,7 +9,7 @@
 form{
     background: var(--container-pets);
     border: 1px solid var(--border-inputs);
-    margin: 6rem;
+    margin: 1rem;
     border-radius: .6rem;
 }
 
