@@ -1,12 +1,10 @@
 header{
-    width: 100vw;
     padding: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--text);
     background: var(--header-background);
-    position: fixed;
 }
 
 a #seta{
@@ -19,4 +17,30 @@ a #seta:hover{
 
 h2{
     font: 400 1.8rem 'Sansita', sans-serif;
+}
+
+@media(max-width: 375px){
+    header{
+        padding: .8rem;
+    }
+}
+
+@media(max-width: 320px){
+    header{
+        width: 108vw;
+    }
+}
+
+@media(max-width: 280px){
+    header{
+        width: 107vw;
+    }
+
+    a #seta{
+        width: 30px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
 }
