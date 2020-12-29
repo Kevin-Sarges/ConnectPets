@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 
-body{
+html{
     height: 100vh;
+}
+
+body{
     color: var(--body-text);
     background: var(--body-background);
 }
@@ -17,4 +20,16 @@ body, input, button, textarea{
 h1{
     color: var(--title-text);
     font-family: 'Sansita', sans-serif;
+}
+
+@media(max-width: 320px){
+    html{
+        width: 107vw;
+    }
+}
+
+@media(max-width: 280px){
+    html{
+        width: 107vw;
+    }
 }
