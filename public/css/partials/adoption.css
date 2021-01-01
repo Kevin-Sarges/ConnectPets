@@ -92,7 +92,7 @@ footer{
     }
 
     footer{
-        font-size: .9rem;
+        font-size: .8rem;
     }
 }
 
@@ -108,7 +108,7 @@ footer{
     }
 
     footer p{
-        font-size: .8rem;
+        font-size: .7rem;
     }
 }
 
@@ -127,9 +127,5 @@ footer{
         border-radius: 1rem;
         max-width: 15.6rem;
         max-height: 13rem;
-    }
-
-    footer{
-        font-size: .7rem;
     }
 }
