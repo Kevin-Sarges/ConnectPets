@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../../components/Header';
 import Form from '../../components/Form';
 
-function Donete() {
+function Donate() {
   return (
       <>
         <Header/>
@@ -12,4 +12,4 @@ function Donete() {
   );
 }
 
-export default Donete;
+export default Donate;
