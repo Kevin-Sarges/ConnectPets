@@ -4,7 +4,6 @@ export const Container = styled.main`
   margin: 0 auto;
   width: 90vw;
   height: 100vh;
-  overflow-y: hidden;
 
   > form{
     margin: 20px 350px;
