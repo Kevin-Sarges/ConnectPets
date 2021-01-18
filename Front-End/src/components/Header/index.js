@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Container } from './styles';
+import { Container, Button } from './styles';
 
 function Header() {
   return (
     <Container>
-      <button>Doar</button>
+      <Link to="/donate">
+        <Button>Doar</Button>
+      </Link>
       <h3>Connect Pets</h3>
     </Container>
   );
