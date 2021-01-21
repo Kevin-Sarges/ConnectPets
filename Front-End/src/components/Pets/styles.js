@@ -1,25 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.main`
-	margin: 20px 500px;
-	text-align: center;
+export const Container = styled.div`
+	margin: 0 auto;
+  padding: 20px;
+	border-radius: 7px;
+	border: 1px solid #c4c4c4;
+	background-color: #f4f0f0;
 `;
 
 export const StyleImage = styled.img`
 	width: 300px;
 	border-radius: 8px;
 	margin-bottom: 10px;
-`;
-
-export const DivContainer = styled.div`
-	margin-top: 20px;
-`;
-
-export const Pets = styled.div`
-	padding: 20px;
-	border-radius: 7px;
-	border: 1px solid #c4c4c4;
-	background-color: #f4f0f0;
 `;
 
 export const Footer = styled.footer`
@@ -47,4 +39,3 @@ export const Button = styled.button`
 		background: #03eb6e;
 	}
 `;
-

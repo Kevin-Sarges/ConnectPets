@@ -14,16 +14,7 @@ export const Container = styled.header`
 	}
 `;
 
-export const Button = styled.button`
-	font-size: 14px;
-	padding: 5px 20px;
-	border-radius: 8px;
-	border: 1px solid #24611F;
-	color: #ffffff;
-	background: none;
-	cursor: pointer;
-	&:hover{
-		background: #24911F;
-		border: 1px solid #24911F; 
-	}
+export const Image = styled.img`
+	width: 30px;
+  height: 31px;
 `;

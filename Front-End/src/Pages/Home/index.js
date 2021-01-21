@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Header from '../../components/Header';
-import ContainerPets from '../../components/ContainerPets';
+import Feed from '../../components/Feed';
 
 function Home() {
   return (
       <>
         <Header/>
-        <ContainerPets/>
+        <Feed/>
       </>
   );
 }
