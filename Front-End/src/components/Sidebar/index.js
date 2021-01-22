@@ -1,12 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Container } from './styles';
+import { Container, SidebarMenu } from './styles';
 
 function Sidebar() {
   return (
     <Container>
-			<h1>Doar</h1>
-			<h1>Informações</h1>
+      <SidebarMenu>
+        <Link to="/donate">
+          Doar
+        </Link>
+
+        <Link to="#">
+          Informações sobre o site
+        </Link>
+      </SidebarMenu>
     </Container>
   );
 }
