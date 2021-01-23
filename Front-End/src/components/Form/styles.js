@@ -6,48 +6,18 @@ export const Container = styled.main`
   height: 100vh;
 
   > form{
-    margin: 20px 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f4f0f0;
-    border: 1px solid #c4c4c4;
-
-    @media(max-width: 1024px){
-      margin: 10px 264px;
-    }
-
-    @media(max-width: 768px){
-      margin: 10px 174px;
-    }
-
-    @media(max-width: 540px){
-      margin: 10px 65px;
-    }
-
-    @media(max-width: 414px){
-       margin: 10px 19px;
-    }
-
-    @media(max-width: 375px){
-      margin: 10px 2px;
-    }
-
-    @media(max-width: 320px){
-      margin: 10px 2px;
-    }
-
-    @media(max-width: 280px){
-      margin: 10px 0px;
-      font-size: 12px;
-    }
   }
 `;
 
 export const Fieldset = styled.fieldset`
+	margin-top: 84px;
 	text-align: justify;
 	color: #5c8999;
-	border: none;
+	background: #f4f0f0;
+    border: 1px solid #c4c4c4;
 `;
 
 export const Legend = styled.h4`

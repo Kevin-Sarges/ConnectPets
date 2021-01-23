@@ -6,7 +6,11 @@ export const Container = styled.main`
 `;
 
 export const DivContainer = styled.div`
-	margin-top: 20px;
 	display: flex;
 	justify-content: space-between;
+`;
+
+export const Feed = styled.div`
+	margin: 0 auto;
+	flex-direction: column;
 `;

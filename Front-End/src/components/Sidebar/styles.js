@@ -3,9 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
 	margin: 0 40px;
 	text-align: justify;
+	position: fixed;
 `;
 
 export const SidebarMenu= styled.div`
+	margin-top: 84px;
 	padding: 5px 30px;
 	display: flex;
 	flex-direction: column;

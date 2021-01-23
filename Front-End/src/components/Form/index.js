@@ -29,6 +29,11 @@ function Form() {
           </Inputs>
 
           <Inputs>
+            <label for="name">Raça <span>(Só os dois primeiros nomes!)</span></label>
+						<input id="name" name="name" required/>
+          </Inputs>
+
+          <Inputs>
             <label for="whatsapp">Numero do whatsapp</label>
 						<input id="whatsapp" name="whatsapp" required/>
           </Inputs>
