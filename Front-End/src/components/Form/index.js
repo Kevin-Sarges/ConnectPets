@@ -29,7 +29,7 @@ function Form() {
           </Inputs>
 
           <Inputs>
-            <label for="name">Raça <span>(Só os dois primeiros nomes!)</span></label>
+            <label for="name">Nome do doador <span>(Só os dois primeiros nomes!)</span></label>
 						<input id="name" name="name" required/>
           </Inputs>
 

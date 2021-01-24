@@ -2,11 +2,17 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	margin-top: 84px;
-	margin-bottom: 20px;
-  	padding: 20px;
+	margin-bottom: -50px;
+  padding: 20px;
 	border-radius: 7px;
 	border: 1px solid #c4c4c4;
 	background-color: #f4f0f0;
+
+	@media(max-width: 935px){
+		> p{
+			font-size: 12px;
+		}
+	}
 `;
 
 export const StyleImage = styled.img`
