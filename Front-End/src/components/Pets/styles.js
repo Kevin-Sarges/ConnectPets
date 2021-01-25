@@ -33,7 +33,7 @@ export const Description = styled.div`
 `;
 
 export const Button = styled.button`
-	padding: 10px 20px;
+	padding: 6px 10px;
 	display: flex;
 	align-items: center;
 	text-decoration: none;
