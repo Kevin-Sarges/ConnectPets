@@ -5,6 +5,8 @@ export const Container = styled.main`
   width: 90vw;
   height: 100vh;
 
+  overflow: hidden; /*talves nao funcione da pelo fato de esta aplicando somente p/ o main :)*/
+
   > form{
     display: flex;
     flex-direction: column;
