@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Nav = styled.div`
+export const Nav = styled.header`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
