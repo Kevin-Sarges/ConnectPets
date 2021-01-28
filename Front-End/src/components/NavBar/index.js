@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import { Nav } from './styles';
+import Logo from '../../assets/images/logo.svg';
+import { Nav, Image, Hamburger, Menu, MenuLink } from './styles';
 
 function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-		<Nav></Nav>
+		<Nav>
+      <Image src={ Logo }/>
+
+      <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <span/>
+        <span/>
+        <span/>
+      </Hamburger>
+
+      <Menu isOpen={isOpen}>
+        <Link to="/">
+          <MenuLink>Home</MenuLink>
+        </Link>
+
+        <Link to="/donate">
+          <MenuLink>Doar</MenuLink>
+        </Link>
+
+        <Link to="#">
+          <MenuLink>Sobre o site</MenuLink>
+        </Link>
+      </Menu>
+    </Nav>
   );
 }
 
