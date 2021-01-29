@@ -52,6 +52,10 @@ export const Menu = styled.div`
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
+
+    > a{
+      margin-bottom: 10px;
+    }
   }
 `;
 

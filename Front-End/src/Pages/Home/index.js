@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Header from '../../components/Header';
+import Nav from '../../components/NavBar';
 import Feed from '../../components/Feed';
 
 function Home() {
   return (
       <>
-        <Header/>
+        <Nav/>
         <Feed/>
       </>
   );
