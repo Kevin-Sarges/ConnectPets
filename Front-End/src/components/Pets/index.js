@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Dog from '../../assets/images/dog.jpg';
+import Dog from '../../assets/dog.jpg';
 
 import { Container, StyleImage, Footer, Description, Button } from './styles';
 
@@ -18,9 +18,9 @@ function Pets() {
 				</Description>
 
 				<footer>
-						<Button href="https://api.whatsapp.com/send?1=pt_BR&phone={{this.whatsapp}}&text=Desejo adotar o pet">
-							Entre em contato
-						</Button>
+					<Button href="https://api.whatsapp.com/send?1=pt_BR&phone={{this.whatsapp}}&text=Desejo adotar o pet">
+						Entre em contato
+					</Button>
 				</footer>
 			</Footer>
 		</Container>

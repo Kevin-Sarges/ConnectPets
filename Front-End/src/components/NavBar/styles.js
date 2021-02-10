@@ -54,6 +54,7 @@ export const Menu = styled.div`
     width: 100%;
 
     > a{
+      margin-top: 10px;
       margin-bottom: 10px;
     }
   }
