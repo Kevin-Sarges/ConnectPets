@@ -26,6 +26,12 @@ export const Legend = styled.h4`
 	font-size: 20px;
 `;
 
+export const Teste = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
 export const Inputs = styled.div`
 	margin: 10px;
 	display: flex;
@@ -46,6 +52,14 @@ export const Inputs = styled.div`
 		background: #f0f0f0;
 		border: 1px solid #c4c4c4;
 		color: #5c8999;
+	}
+
+	#photo {
+	
+	}
+
+	#age{
+		width: 70%;
 	}
 `;
 
