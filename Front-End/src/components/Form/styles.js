@@ -17,7 +17,7 @@ export const Fieldset = styled.fieldset`
 	text-align: justify;
 	color: #5c8999;
 	background: #f4f0f0;
-    border: 1px solid #c4c4c4;
+  border: 1px solid #c4c4c4;
 `;
 
 export const Legend = styled.h4`
@@ -26,14 +26,14 @@ export const Legend = styled.h4`
 	font-size: 20px;
 `;
 
-export const Teste = styled.div`
+export const ImagesPet = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
 `;
 
 export const Inputs = styled.div`
-	margin: 10px;
+	margin: 15px;
 	display: flex;
 	flex-direction: column;
 
@@ -54,12 +54,20 @@ export const Inputs = styled.div`
 		color: #5c8999;
 	}
 
-	#photo {
-	
+	#photo::-webkit-file-upload-button{
+		border-radius: 8px;
+		text-decoration: none;
+		border: 1px solid #188a24;
+		color: #188a24;
+		cursor: pointer;
+	}
+
+	#photo{
+		width: 100%;
 	}
 
 	#age{
-		width: 70%;
+		width: 100%;
 	}
 `;
 

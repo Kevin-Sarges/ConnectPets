@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Fieldset, Legend, Teste, Inputs, Footer } from './styles';
+import { Container, Fieldset, Legend, ImagesPet, Inputs, Footer } from './styles';
 
 function Form() {
   return (
@@ -9,17 +9,17 @@ function Form() {
         <Fieldset>
           <Legend>Peecha alguns dados</Legend>
           
-          <Teste>
+          <ImagesPet>
             <Inputs>
               <label for="photo">Foto do pet</label>
               <input id="photo" name="photo" type="file" required/>
             </Inputs>
 
             <Inputs>
-              <label for="age">Idade</label>
+              <label for="age">Idade <span>(meses/anos)</span></label>
               <input id="age" name="age" required/>
             </Inputs>
-          </Teste>
+          </ImagesPet>
 
           <Inputs>
             <label for="sex">Sexo</label>
