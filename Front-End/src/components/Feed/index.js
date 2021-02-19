@@ -1,18 +1,12 @@
 import React from 'react';
 
-import Pets from '../Pets'
-
-import { Container, DivContainer, Feed } from './styles';
+import Pets from '../Pets';
 
 function ContainerPets() {
   return (
     <Container>
       <DivContainer>
         <Feed>
-          <Pets/>
-          <Pets/>
-          <Pets/>
-          <Pets/>
           <Pets/>
         </Feed>
       </DivContainer>
