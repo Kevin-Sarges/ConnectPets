@@ -5,8 +5,8 @@ export const Container = styled.div`
 	margin-bottom: -50px;
   padding: 20px;
 	border-radius: 7px;
-	border: 1px solid #c4c4c4;
-	background-color: #f4f0f0;
+	border: 1px solid var(--border-container);
+	background-color: var(--background-container);
 
 	@media(max-width: 935px){
 		> p{
@@ -39,10 +39,10 @@ export const Button = styled.button`
 	text-decoration: none;
 	border: none;
 	border-radius: 10px;
-	color: #ffffff;
-	background: #03ce60;
+	color: var(--text-color-button);
+	background: var(--button-home);
 	cursor: pointer;
 	&:hover{
-		background: #03eb6e;
+		background: var(--button-home-hover);
 	}
 `;

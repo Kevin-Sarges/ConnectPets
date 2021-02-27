@@ -6,7 +6,7 @@ export const Nav = styled.header`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: linear-gradient(180deg, #24611F 0%, #67D93F 100%);
+  background: var(--background-header);
   position: fixed;
   top: 0;
   left: 0;
@@ -66,10 +66,10 @@ export const MenuLink = styled.a`
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  color: #ffffff;
+  color: var(--text-header);
 
   &:hover{
-    background: #67D93F;
+    background: var(--hover-button-header);
     border-radius: 8px;
   }
 `;

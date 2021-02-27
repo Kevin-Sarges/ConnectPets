@@ -15,9 +15,9 @@ export const Container = styled.main`
 export const Fieldset = styled.fieldset`
 	margin-top: 84px;
 	text-align: justify;
-	color: #5c8999;
-	background: #f4f0f0;
-  border: 1px solid #c4c4c4;
+	color: var(--text-color-form);
+	background: var(--background-container);
+  border: 1px solid var(--border-container);
 `;
 
 export const Legend = styled.h4`
@@ -42,23 +42,23 @@ export const Inputs = styled.div`
 
 		> span{
 			font-size: 12px;
-			color: #b4a9b9;
+			color: var(--span-inputs);
 		}
 	}
 
 	> input{
 		padding: 8px;
 		border-radius: 8px;
-		background: #f0f0f0;
-		border: 1px solid #c4c4c4;
-		color: #5c8999;
+		background: var(--background-inputs);
+		border: 1px solid var(--span-inputs);
+		color: var(--text-color-form);
 	}
 
 	#photo::-webkit-file-upload-button{
 		border-radius: 8px;
 		text-decoration: none;
-		border: 1px solid #188a24;
-		color: #188a24;
+		border: 1px solid var(--button-form);
+		color: var(--button-form);
 		cursor: pointer;
 	}
 
@@ -79,12 +79,12 @@ export const Footer= styled.footer`
 		padding: 10px;
 		border-radius: 8px;
 		border: none;
-		background: #188a24;
-		color: #ffffff;
+		background: var(--button-form);
+		color: var(--color-button-form);
 		cursor: pointer;
 
 		&:hover{
-			background: #0ca81b;
+			background: var(--button-form-hover);
 		}
 	}
 `;
