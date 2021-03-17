@@ -15,7 +15,7 @@ module.exports = {
 
 				const filename = `${hash.toString('hex')}-${file.originalname}`
 
-				cb(null, filename);
+				cb(null, filename.replace(/\s/g, ''));
 			});
 		}
 	}),
