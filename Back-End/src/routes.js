@@ -1,12 +1,12 @@
 const routes = require('express').Router();
 const multer = require('multer');
-const pages = require('./controllers/pages');
+const controller = require('./controllers/controllersDonates');
 const multerConfig = require('./controllers/config/multerConfig');
 
-routes.get('/', pages.index);
-routes.get('/donate', pages.donate);
-routes.get('/information', pages.information);
+routes.get('/', controller.index);
+routes.get('/donate', controller.donate);
+routes.get('/information', controller.information);
 
-routes.post('/donate', multer(multerConfig).single('file'), pages.donatePet);
+routes.post('/donate', multer(multerConfig).single('file'), controller.donatePet);
 
 module.exports = routes;
