@@ -5,17 +5,19 @@ import api from '../../services/api';
 
 import { Container, StyleImage, Footer, Description, Button } from './styles';
 
-class Pets extends Component{
+class Pets extends Component {
 	state = {
 		pets: [],
 	}
 
 	async componentDidMount() {
-		const response = await api.get('/');
+		try {
+			const response = await api.get('/');
 
-		//console.log(response.data);
-
-		this.setState({ pets: response.data });
+			this.setState({ pets: response.data });
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
 	render() {
@@ -26,7 +28,7 @@ class Pets extends Component{
 			<>
 				{pets.map(pet => (
 					<>
-						<Container>
+						<Container key={ pet._id }>
 							<StyleImage src={ Dog } alt="Pets"/>
 							<Footer>
 								<Description>
