@@ -1,34 +1,44 @@
 import React, { useState } from 'react';
 
 import { Container, Fieldset, Legend, ImagesPet, Inputs, Footer } from './styles';
-// import api from '../../services/api';
+import api from '../../services/api';
 
-function Form(props) {
-  const [dados, setDados] = useState({});
+const initialValue = {
+	photo: '',
+	age: '',
+	sex: '',
+	race: '',
+	name: '',
+	whatsapp: '',
+}
 
-  const submit = (event) => {
-    event.preventDefault();
-    props.handleSubmit(dados);
-  }
-  
-  /*api.post('donate', {
-    file: '4124781269482614-dog.png',
-    age: '2 meses',
-    sex: 'macho',
-    race: 'Desconhecida',
-    name: 'jdkfgaejfg',
-    whatsapp: '333333333333',
-  })
-  .then(function(response) {
-    console.log(response);
-  })
-  .catch(function(error) {
-    console.log(error);
-  })*/
+function Form() {
+	const [values, setValues] = useState(initialValue);
+
+	function onChange(event) {
+		const {name, value} = event.target;
+	
+		setValues({ ...values, [name]: value });
+
+		console.log(setValues);
+	}
+ 
+	function onSubmit(event) {
+		event.preventDefault();
+		
+		api.post('donate', values)
+  		.then(function(response) {
+    		console.log(response);
+  		})
+  		.catch(function(error) {
+    		console.log(error);
+  		})
+		
+	}
 
   return (
     <Container>
-      <form onSubmit={submit} enctype="multiipart/form-data">
+      <form onSubmit={onSubmit} enctype="multiipart/form-data">
         <Fieldset>
           <Legend>Peecha alguns dados</Legend>
           
@@ -39,7 +49,7 @@ function Form(props) {
                 name="photo" 
                 type="file" 
                 id="photo"
-                onChange={e => setDados({ ...dados, photo: e.target.value })}
+                onChange={onChange}
                 //onFileUploaded={setSalectFile}
                 required
               />
@@ -51,7 +61,7 @@ function Form(props) {
                 name="age" 
                 placeholder="Ex: 2 meses" 
                 id="age"
-                onChange={e => setDados({ ...dados, age: e.target.value })}
+                onChange={onChange}
                 required
               />
             </Inputs>
@@ -62,7 +72,7 @@ function Form(props) {
             <input 
               name="sex"
               id="sex"
-              onChange={e => setDados({ ...dados, sex: e.target.value })}
+              onChange={onChange}
               require
             />
           </Inputs>
@@ -72,7 +82,7 @@ function Form(props) {
             <input 
               name="race" 
               id="race"
-              onChange={e => setDados({ ...dados, race: e.target.value })}
+              onChange={onChange}
               require
             />
           </Inputs>
@@ -82,7 +92,7 @@ function Form(props) {
             <input 
               name="name" 
               id="name"
-              onChange={e => setDados({ ...dados, name: e.target.value })}
+              onChange={onChange}
               require
             />
           </Inputs>
@@ -92,7 +102,7 @@ function Form(props) {
             <input 
               name="whatsapp" 
               id="whatsapp"
-              onChange={e => setDados({ ...dados, whatsapp: e.target.value })}
+              onChange={onChange}
               require
             />
           </Inputs>
