@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Dog from '../../assets/dog.jpg';
+//import Dog from '../../assets/dog.jpg';
 import api from '../../services/api';
 
 import { Container, StyleImage, Footer, Description, Button } from './styles';
@@ -29,7 +29,7 @@ class Pets extends Component {
 				{pets.map(pet => (
 					<>
 						<Container key={ pet._id }>
-							<StyleImage src={ Dog } alt="Pets"/>
+							<StyleImage src={ pet.file } alt="Pets"/>
 							<Footer>
 								<Description>
 									<p>Doador: { pet.name }</p>
