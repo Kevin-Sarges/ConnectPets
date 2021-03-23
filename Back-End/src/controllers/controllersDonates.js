@@ -6,7 +6,6 @@ module.exports = {
 			const listPets = await knex.select().table('pets');
 
 			return res.json(listPets);
-			//return res.render('/');
 		} catch (error) {
 			next(error);
 		}
@@ -38,8 +37,7 @@ module.exports = {
 				whatsapp: fielsds.whatsapp,
 			});
 
-			// return res.status(201).json({ 'dados': 'salvos' });
-			return res.redirect('/');
+			return res.status(201).json({ 'dados': 'salvos' });
 		} catch (error) {
 			console.log(error);
 			return res.send('Erro no no banco de dados!');
