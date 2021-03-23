@@ -1,12 +1,11 @@
 import React from 'react';
 
-// import Form from '../../components/Form';
-import Dropzone from '../../components/DropZone';
+import Form from '../../components/Form';
 
 function Donate() {
   return (
     <>
-      <Dropzone/>
+      <Form/>
     </>
   );
 }
