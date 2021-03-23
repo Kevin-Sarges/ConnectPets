@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import { Container, Fieldset, Legend, ImagesPet, Inputs, Footer } from './styles';
+import { Container, Fieldset, ImagesPet, Inputs, Footer } from './styles';
+import DropZone from '../DropZone'
 import api from '../../services/api';
 
 const initialValue = {
-	photo: '',
 	age: '',
 	sex: '',
 	race: '',
@@ -13,10 +13,11 @@ const initialValue = {
 }
 
 function Form() {
+	//const [selctFile, setSelectFile] = useState('');
 	const [values, setValues] = useState(initialValue);
 
 	function onChange(event) {
-		const {name, value} = event.target;
+		const { name, value } = event.target;
 	
 		setValues({ ...values, [name]: value });
 
@@ -39,22 +40,10 @@ function Form() {
   return (
     <Container>
       <form onSubmit={onSubmit} enctype="multiipart/form-data">
-        <Fieldset>
-          <Legend>Peecha alguns dados</Legend>
-          
-          <ImagesPet>
-            <Inputs>
-              <label for="photo">Foto do pet</label>
-              <input 
-                name="photo" 
-                type="file" 
-                id="photo"
-                onChange={onChange}
-                //onFileUploaded={setSalectFile}
-                required
-              />
-            </Inputs>
+        <Fieldset> 
+	  <DropZone />
 
+          <ImagesPet>
             <Inputs>
               <label for="age">Idade <span>(meses/anos)</span></label>
               <input
@@ -65,9 +54,8 @@ function Form() {
                 required
               />
             </Inputs>
-          </ImagesPet>
 
-          <Inputs>
+	 <Inputs>
             <label for="sex">Sexo</label>
             <input 
               name="sex"
@@ -76,6 +64,8 @@ function Form() {
               require
             />
           </Inputs>
+
+          </ImagesPet>
 
           <Inputs>
             <label for="race">Raça <span>(Se você não sabe coloque como "Desconhecida"!)</span></label>

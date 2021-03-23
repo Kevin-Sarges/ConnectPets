@@ -20,12 +20,6 @@ export const Fieldset = styled.fieldset`
   border: 1px solid var(--border-container);
 `;
 
-export const Legend = styled.h4`
-	margin: 20px 0px;
-	text-align: center;
-	font-size: 20px;
-`;
-
 export const ImagesPet = styled.div`
 	display: flex;
 	align-items: center;
