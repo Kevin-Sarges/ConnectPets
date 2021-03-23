@@ -38,8 +38,8 @@ module.exports = {
 				whatsapp: fielsds.whatsapp,
 			});
 
-			return res.status(201).json({ 'dados': 'salvos' });
-			// return res.redirect('/');
+			// return res.status(201).json({ 'dados': 'salvos' });
+			return res.redirect('/');
 		} catch (error) {
 			console.log(error);
 			return res.send('Erro no no banco de dados!');

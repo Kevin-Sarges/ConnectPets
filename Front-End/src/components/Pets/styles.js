@@ -32,7 +32,7 @@ export const Description = styled.div`
 	text-align: justify;
 `;
 
-export const Button = styled.button`
+export const Button = styled.a`
 	padding: 6px 10px;
 	display: flex;
 	align-items: center;

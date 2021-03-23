@@ -26,7 +26,7 @@ function NavBar() {
           <MenuLink>Doar</MenuLink>
         </Link>
 
-        <Link to="#">
+        <Link to="/#">
           <MenuLink>Sobre o site</MenuLink>
         </Link>
       </Menu>

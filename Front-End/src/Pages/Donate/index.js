@@ -4,9 +4,9 @@ import Form from '../../components/Form';
 
 function Donate() {
   return (
-      <>
-        <Form/>
-      </>
+    <>
+      <Form/>
+    </>
   );
 }
 
