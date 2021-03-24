@@ -1,38 +1,42 @@
-import React, { useState} from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { FiUpload } from 'react-icons/fi'
 
-import { Container, ViewImage, SizeImage, Section } from './styles';
+import { Container, PreviewImage } from './styles';
 
-function DropZone() {
-  const [files, setFiles] = useState([]);
+
+function DropZone({ onFileUploaded }) {
+  const [files, setFiles] = useState('');
+
+  const onDrop = useCallback(acceptedFiles => {
+    const file = acceptedFiles[0];
+
+    const fileUrl = URL.createObjectURL(file);
+
+    setFiles(fileUrl);
+    onFileUploaded(file);
+  }, [onFileUploaded]);
+
   const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
-    onDrop: acceptedFiles => {
-      setFiles(acceptedFiles.map(file => Object.assign(file, {
-        preview: URL.createObjectURL(file)
-      })));
-    }
+    onDrop,
+    accept: 'image/*'
   });
-  
-  const image = files.map(file => (
-    <ViewImage key={file.name}>
-      <SizeImage>
-        <img src={file.preview} />
-      </SizeImage>
-    </ViewImage>
-  ));
 
   return (
-    <Section>
-      <div { ...getRootProps() }>
-        <input { ...getInputProps() } />
-        <p> <FiUpload /> Selecione uma imagem</p>
-      </div>
-      <Container >
-        { image }
-      </Container>
-    </Section>
+    <Container { ...getRootProps() }>
+        <input { ...getInputProps() } accept="image/*" />
+        { files
+          ? <PreviewImage>
+              <img src={ files } alt="imagem" />
+            </PreviewImage>
+          : (
+            <p>
+              <FiUpload />
+              Selecione uma imagem
+            </p>
+          )
+        }
+    </Container>
   );
 }
 

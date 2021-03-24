@@ -4,30 +4,46 @@ import { Container, Fieldset, ImagesPet, Inputs, Footer } from './styles';
 import DropZone from '../DropZone'
 import api from '../../services/api';
 
-const initialValue = {
-	age: '',
-	sex: '',
-	race: '',
-	name: '',
-	whatsapp: '',
-}
-
 function Form() {
-	//const [selctFile, setSelectFile] = useState('');
-	const [values, setValues] = useState(initialValue);
+	const [selctFile, setSelectFile] = useState();
+	const [formData, setFormData] = useState({
+    age: '',
+    sex: '',
+    race: '',
+    name: '',
+    whatsapp: '',
+  });
 
 	function onChange(event) {
 		const { name, value } = event.target;
 	
-		setValues({ ...values, [name]: value });
-
-		console.log(setValues);
+		setFormData({ ...formData, [name]: value });
 	}
  
 	function onSubmit(event) {
 		event.preventDefault();
+
+    const { 
+      age,
+      sex,
+      race,
+      name,
+      whatsapp
+    } = formData;
+
+    const data = new FormData();
+
+    data.append('age', age);
+    data.append('sex', sex);
+    data.append('race', race);
+    data.append('name', name);
+    data.append('whatsapp', whatsapp);
+
+    if(selctFile) {
+      data.append('photo', selctFile)
+    }
 		
-		api.post('donate', values)
+		api.post('donate', formData)
   		.then(function(response) {
     		console.log(response);
   		})
@@ -41,7 +57,7 @@ function Form() {
     <Container>
       <form onSubmit={onSubmit} enctype="multiipart/form-data">
         <Fieldset> 
-	  <DropZone />
+	        <DropZone onFileUploaded={setSelectFile} />
 
           <ImagesPet>
             <Inputs>
@@ -55,7 +71,7 @@ function Form() {
               />
             </Inputs>
 
-	 <Inputs>
+	        <Inputs>
             <label for="sex">Sexo</label>
             <input 
               name="sex"
