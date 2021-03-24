@@ -1,86 +1,97 @@
 import React, { useState } from 'react';
 
-import { Container, Fieldset, Legend, ImagesPet, Inputs, Footer } from './styles';
+import { Container, Fieldset, Div, Inputs, Footer } from './styles';
+import DropZone from '../DropZone'
 import api from '../../services/api';
 
-const initialValue = {
-	photo: '',
-	age: '',
-	sex: '',
-	race: '',
-	name: '',
-	whatsapp: '',
-}
-
 function Form() {
-	const [values, setValues] = useState(initialValue);
+	const [selctFile, setSelectFile] = useState();
+	const [formData, setFormData] = useState({
+    age: '',
+    sex: '',
+    race: '',
+    name: '',
+    whatsapp: '',
+  });
 
 	function onChange(event) {
-		const {name, value} = event.target;
+		const { name, value } = event.target;
 	
-		setValues({ ...values, [name]: value });
-
-		console.log(setValues);
+		setFormData({ ...formData, [name]: value });
 	}
  
 	function onSubmit(event) {
 		event.preventDefault();
+
+    const { 
+      age,
+      sex,
+      race,
+      name,
+      whatsapp
+    } = formData;
+
+    const data = new FormData();
+
+    data.append('age', age);
+    data.append('sex', sex);
+    data.append('race', race);
+    data.append('name', name);
+    data.append('whatsapp', whatsapp);
+
+    if(selctFile) {
+      data.append('photo', selctFile);
+    }
+
+    alert('Postagem realizada!!');
 		
-		api.post('donate', values)
+		api.post('donate', formData)
   		.then(function(response) {
     		console.log(response);
   		})
   		.catch(function(error) {
     		console.log(error);
-  		})
-		
+  		});
 	}
 
   return (
     <Container>
       <form onSubmit={onSubmit} enctype="multiipart/form-data">
-        <Fieldset>
-          <Legend>Peecha alguns dados</Legend>
-          
-          <ImagesPet>
-            <Inputs>
-              <label for="photo">Foto do pet</label>
-              <input 
-                name="photo" 
-                type="file" 
-                id="photo"
-                onChange={onChange}
-                //onFileUploaded={setSalectFile}
-                required
-              />
-            </Inputs>
+        <Fieldset> 
+	        <DropZone onFileUploaded={setSelectFile} />
 
+          <Div>
             <Inputs>
               <label for="age">Idade <span>(meses/anos)</span></label>
               <input
-                name="age" 
+                name="age"
+                type="text"
                 placeholder="Ex: 2 meses" 
                 id="age"
                 onChange={onChange}
                 required
               />
             </Inputs>
-          </ImagesPet>
 
-          <Inputs>
-            <label for="sex">Sexo</label>
-            <input 
-              name="sex"
-              id="sex"
-              onChange={onChange}
-              require
-            />
-          </Inputs>
+            <Inputs>
+              <label for="sex">Sexo</label>
+              <input 
+                name="sex"
+                type="text"
+                placeholder="Ex: Macho ou Fêmia"
+                id="sex"
+                onChange={onChange}
+                require
+              />
+            </Inputs>
+          </Div>
 
           <Inputs>
             <label for="race">Raça <span>(Se você não sabe coloque como "Desconhecida"!)</span></label>
             <input 
               name="race" 
+              type="text"
+              placeholder="Ex: Desconhecida"
               id="race"
               onChange={onChange}
               require
@@ -90,7 +101,9 @@ function Form() {
           <Inputs>
             <label for="name">Nome do doador <span>(Só os dois primeiros nomes!)</span></label>
             <input 
-              name="name" 
+              name="name"
+              type="text" 
+              placeholder="Ex: Kevin Sarges"
               id="name"
               onChange={onChange}
               require
@@ -100,7 +113,9 @@ function Form() {
           <Inputs>
             <label for="whatsapp">Numero do whatsapp</label>
             <input 
-              name="whatsapp" 
+              name="whatsapp"
+              type="number"
+              placeholder="Ex: 91984379265"
               id="whatsapp"
               onChange={onChange}
               require
@@ -108,7 +123,7 @@ function Form() {
           </Inputs>
 
           <Footer>
-            <button type="submit">Cadastrar</button>
+            <button type="submit">Postar</button>
           </Footer>
         </Fieldset>
       </form>

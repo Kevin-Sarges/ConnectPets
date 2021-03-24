@@ -8,6 +8,7 @@ export default createGlobalStyle`
 		--background-header: linear-gradient(180deg, #24611F 0%, #67D93F 100%);
 		--text-header: #fff;
 		--hover-button-header: #67D93F;
+		--button-dropzone: #20A51D;
 
 		--background-container: #f4f0f0;
 		--border-container: #c4c4c4;

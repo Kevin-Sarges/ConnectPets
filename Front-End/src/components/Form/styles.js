@@ -20,13 +20,7 @@ export const Fieldset = styled.fieldset`
   border: 1px solid var(--border-container);
 `;
 
-export const Legend = styled.h4`
-	margin: 20px 0px;
-	text-align: center;
-	font-size: 20px;
-`;
-
-export const ImagesPet = styled.div`
+export const Div = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -51,7 +45,8 @@ export const Inputs = styled.div`
 		border-radius: 8px;
 		background: var(--background-inputs);
 		border: 1px solid var(--span-inputs);
-		color: var(--text-color-form);
+		color: var(--span-inputs);
+		font-size: 14px;
 	}
 
 	#photo::-webkit-file-upload-button{
