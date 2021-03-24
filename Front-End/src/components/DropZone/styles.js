@@ -11,13 +11,13 @@ p {
 	align-items: center;
 	justify-content: space-between;
 	padding: 15px 4px;
-	border: 1px solid #20A51D;
+	border: 1px solid var(--button-dropzone);
 	border-radius: 8px;
 }
 
 p:hover {
-	border-color: #67D93F;
-	color: #20A51D;
+	border-color: var(--hover-button-header);
+	color: var(--button-dropzone);
 }
 `;
 
