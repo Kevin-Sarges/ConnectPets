@@ -40,18 +40,18 @@ function Form() {
     	data.append('whatsapp', whatsapp);
 
     	if(selctFile) {
-      		data.append('photo', selctFile);
+      		data.append('file', selctFile);
     	}
 
       
-		  api.post('donate', formData)
+		api.post('donate', formData)
   		.then(function(response) {
-        console.log(response);
-        alert('Postagem realizada!!');
+	        	console.log(response);
+        		alert('Postagem realizada!!');
   		})
   		.catch(function(error) {
-    		console.log(error);
-        alert('erro ao salvar!!');
+    			console.log(error);
+        		alert('erro ao salvar!!');
   		});
 	}
 
