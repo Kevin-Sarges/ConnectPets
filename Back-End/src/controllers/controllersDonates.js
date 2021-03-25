@@ -11,36 +11,32 @@ module.exports = {
 		}
 	},
 
-	donate(req, res, next) {
-		return res.render('Donate');
-	},
-
-	information(req, res, next) {
-		return res.render('Information');
-	},
-
 	async donatePet(req, res, next) {
-		const urlImage = req.file;
-		const fielsds = req.body;
-
-		if (Object.values(fielsds).includes('')) {
-			return res.send('Todos os campos devem ser preenchidos!');
-		}
-
 		try {
-			await knex('pets').insert({
-				file: `http://localhost:3333/files/${urlImage.filename}`,
-				name: fielsds.name,
-				race: fielsds.race,
-				age: fielsds.age,
-				sex: fielsds.sex,
-				whatsapp: fielsds.whatsapp,
-			});
+			const {
+				age,
+				sex,
+				race,
+				name,
+				whatsapp,
+			} = req.body;
+
+			const trx = await knex.transaction();
+	
+			const pet = {
+				file: req.file.filename,
+				age,
+				sex,
+				race,
+				name,
+				whatsapp,
+			};
+
+			await trx('pets').insert(pet);
 
 			return res.status(201).json({ 'dados': 'salvos' });
 		} catch (error) {
-			console.log(error);
-			return res.send('Erro no no banco de dados!');
+			next(error);
 		}
 	}
 }
