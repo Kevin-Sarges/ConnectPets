@@ -7,12 +7,12 @@ import api from '../../services/api';
 function Form() {
 	const [selctFile, setSelectFile] = useState();
 	const [formData, setFormData] = useState({
-    age: '',
-    sex: '',
-    race: '',
-    name: '',
-    whatsapp: '',
-  });
+      age: '',
+      sex: '',
+      race: '',
+      name: '',
+      whatsapp: '',
+  	});
 
 	function onChange(event) {
 		const { name, value } = event.target;
@@ -23,42 +23,43 @@ function Form() {
 	function onSubmit(event) {
 		event.preventDefault();
 
-    const { 
-      age,
-      sex,
-      race,
-      name,
-      whatsapp
-    } = formData;
+	    const { 
+        age,
+        sex,
+        race,
+        name,
+        whatsapp
+    	} = formData;
 
-    const data = new FormData();
+    	const data = new FormData();
 
-    data.append('age', age);
-    data.append('sex', sex);
-    data.append('race', race);
-    data.append('name', name);
-    data.append('whatsapp', whatsapp);
+    	data.append('age', age);
+    	data.append('sex', sex);
+    	data.append('race', race);
+   	  data.append('name', name);
+    	data.append('whatsapp', whatsapp);
 
-    if(selctFile) {
-      data.append('photo', selctFile);
-    }
+    	if(selctFile) {
+      		data.append('photo', selctFile);
+    	}
 
-    alert('Postagem realizada!!');
-		
-		api.post('donate', formData)
+      
+		  api.post('donate', formData)
   		.then(function(response) {
-    		console.log(response);
+        console.log(response);
+        alert('Postagem realizada!!');
   		})
   		.catch(function(error) {
     		console.log(error);
+        alert('erro ao salvar!!');
   		});
 	}
 
   return (
     <Container>
       <form onSubmit={onSubmit} enctype="multiipart/form-data">
-        <Fieldset> 
-	        <DropZone onFileUploaded={setSelectFile} />
+        <Fieldset>
+	      <DropZone onFileUploaded={setSelectFile} />
 
           <Div>
             <Inputs>
