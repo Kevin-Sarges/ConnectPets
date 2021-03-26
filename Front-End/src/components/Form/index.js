@@ -14,13 +14,13 @@ function Form() {
       whatsapp: '',
   	});
 
-	function onChange(event) {
+	function handleChange(event) {
 		const { name, value } = event.target;
 	
 		setFormData({ ...formData, [name]: value });
 	}
  
-	function onSubmit(event) {
+	function handleSubmit(event) {
 		event.preventDefault();
 
 	    const { 
@@ -40,36 +40,36 @@ function Form() {
     	data.append('whatsapp', whatsapp);
 
     	if(selctFile) {
-      		data.append('file', selctFile);
+      	data.append('file', selctFile);
     	}
 
       
 		api.post('donate', formData)
   		.then(function(response) {
-	        	console.log(response);
-        		alert('Postagem realizada!!');
+        console.log(response);
+        alert('Postagem realizada!!');
   		})
   		.catch(function(error) {
-    			console.log(error);
-        		alert('erro ao salvar!!');
+        console.log(error);
+        alert('erro ao salvar!!');
   		});
 	}
 
   return (
     <Container>
-      <form onSubmit={onSubmit} enctype="multiipart/form-data">
+      <form onSubmit={handleSubmit} enctype="multiipart/form-data">
         <Fieldset>
 	      <DropZone onFileUploaded={setSelectFile} />
 
           <Div>
             <Inputs>
-              <label for="age">Idade <span>(meses/anos)</span></label>
+              <label for="age">Idade <span>(Dias, Meses ou Anos)</span></label>
               <input
                 name="age"
                 type="text"
                 placeholder="Ex: 2 meses" 
                 id="age"
-                onChange={onChange}
+                onChange={handleChange}
                 required
               />
             </Inputs>
@@ -81,7 +81,7 @@ function Form() {
                 type="text"
                 placeholder="Ex: Macho ou Fêmia"
                 id="sex"
-                onChange={onChange}
+                onChange={handleChange}
                 require
               />
             </Inputs>
@@ -94,7 +94,7 @@ function Form() {
               type="text"
               placeholder="Ex: Desconhecida"
               id="race"
-              onChange={onChange}
+              onChange={handleChange}
               require
             />
           </Inputs>
@@ -106,7 +106,7 @@ function Form() {
               type="text" 
               placeholder="Ex: Kevin Sarges"
               id="name"
-              onChange={onChange}
+              onChange={handleChange}
               require
             />
           </Inputs>
@@ -118,7 +118,7 @@ function Form() {
               type="number"
               placeholder="Ex: 91984379265"
               id="whatsapp"
-              onChange={onChange}
+              onChange={handleChange}
               require
             />
           </Inputs>
