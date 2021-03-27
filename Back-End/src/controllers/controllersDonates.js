@@ -21,18 +21,18 @@ module.exports = {
 				whatsapp,
 			} = req.body;
 
-			const urlImage = req.file.filename;
-			const originalName = req.file.originalname;
-			console.log(originalName);
+			
+		console.log(req.file.originalname);	
+		
 
 			const pet = {
-				image: originalName,
+				image: req.file.originalname,
 				age,
 				sex,
 				race,
 				name,
 				whatsapp,
-				url: `http://loaclhost:3333/files/${urlImage}`
+				url: `http://loaclhost:3333/files/${req.file.filename}`
 			};
 
 			await knex('pets').insert(pet);
