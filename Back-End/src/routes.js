@@ -7,4 +7,6 @@ routes.get('/', controller.index);
 
 routes.post('/donate', multer(multerConfig).single('image'), controller.donatePet);
 
+routes.delete('/delete/:id', controller.deleteDonate);
+
 module.exports = routes;

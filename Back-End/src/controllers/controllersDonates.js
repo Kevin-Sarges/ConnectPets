@@ -20,10 +20,8 @@ module.exports = {
 				name,
 				whatsapp,
 			} = req.body;
-
 			
 		console.log(req.file.originalname);	
-		
 
 			const pet = {
 				image: req.file.originalname,
@@ -32,12 +30,23 @@ module.exports = {
 				race,
 				name,
 				whatsapp,
-				url: `http://loaclhost:3333/files/${req.file.filename}`
+				url: `http://localhost:3333/files/${urlImage}`
 			};
 
 			await knex('pets').insert(pet);
 
 			return res.status(201).json({ 'dados': 'salvos' });
+		} catch (error) {
+			next(error);
+		}
+	},
+
+	async deleteDonate(req, res, next) {
+		try {
+			const { id } = req.params;
+			await knex('pets').where({ id }).del();
+
+			return res.status(201).json({ 'Doação': 'deletada' });
 		} catch (error) {
 			next(error);
 		}
