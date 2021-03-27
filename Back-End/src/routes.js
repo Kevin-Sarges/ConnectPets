@@ -5,6 +5,6 @@ const multerConfig = require('./config/multerConfig');
 
 routes.get('/', controller.index);
 
-routes.post('/donate', multer(multerConfig).single('file'), controller.donatePet);
+routes.post('/donate', multer(multerConfig).single('image'), controller.donatePet);
 
 module.exports = routes;

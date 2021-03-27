@@ -5,12 +5,13 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('pets').insert([
         { 
-          file: 'http://loaclhost:3333/imagem01',
-          name: 'João',
-          race: 'Deconhecido',
+          image: 'imagem01.png',
           age: '4 meses',
           sex: 'macho',
-          whatsapp: '111111111111',
+          race: 'Deconhecido',
+          name: 'João',
+          whatsapp: 111111111111,
+          url: 'http://loaclhost:3333/files/imagem01.png'
         }
       ]);
     });
