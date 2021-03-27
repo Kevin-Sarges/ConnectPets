@@ -22,14 +22,17 @@ module.exports = {
 			} = req.body;
 
 			const urlImage = req.file.filename;
+			const originalName = req.file.originalname;
+			console.log(originalName);
 
 			const pet = {
-				file: `http://localhost:3333/files/${urlImage}`,
+				image: originalName,
 				age,
 				sex,
 				race,
 				name,
 				whatsapp,
+				url: `http://loaclhost:3333/files/${urlImage}`
 			};
 
 			await knex('pets').insert(pet);
