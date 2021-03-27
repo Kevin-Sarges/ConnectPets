@@ -20,12 +20,11 @@ module.exports = {
 				name,
 				whatsapp,
 			} = req.body;
-
-			const urlImage = req.file.filename;
-			const originalName = req.file.originalname;
+			
+		console.log(req.file.originalname);	
 
 			const pet = {
-				image: originalName,
+				image: req.file.originalname,
 				age,
 				sex,
 				race,
