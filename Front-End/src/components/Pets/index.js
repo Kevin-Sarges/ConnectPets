@@ -28,8 +28,8 @@ class Pets extends Component {
 			<>
 				{pets.map(pet => (
 					<>
-						<Container key={ pet._id }>
-							<StyleImage src={ pet.file } alt="Pets"/>
+						<Container key={ pet.id }>
+							<StyleImage src={ pet.url } alt="Pets"/>
 							<Footer>
 								<Description>
 									<p>Doador: { pet.name }</p>
