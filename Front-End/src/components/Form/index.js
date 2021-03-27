@@ -40,7 +40,7 @@ function Form() {
     	data.append('whatsapp', whatsapp);
 
     	if(selctFile) {
-      	data.append('file', selctFile);
+      	data.append('image', selctFile);
     	}
 
       
