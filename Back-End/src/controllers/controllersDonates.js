@@ -4,7 +4,7 @@ module.exports = {
   async index(req, res, next) {
 		try {
 			const listPets = await knex.select().table('pets');
-
+		 
 			return res.json(listPets);
 		} catch (error) {
 			next(error);
@@ -21,10 +21,10 @@ module.exports = {
 				whatsapp,
 			} = req.body;
 
-			const trx = await knex.transaction();
-	
+			const urlImage = req.file.filename;
+
 			const pet = {
-				file: req.file.filename,
+				file: `http://localhost:3333/files/${urlImage}`,
 				age,
 				sex,
 				race,
@@ -32,7 +32,7 @@ module.exports = {
 				whatsapp,
 			};
 
-			await trx('pets').insert(pet);
+			await knex('pets').insert(pet);
 
 			return res.status(201).json({ 'dados': 'salvos' });
 		} catch (error) {

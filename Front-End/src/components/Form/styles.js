@@ -45,7 +45,6 @@ export const Inputs = styled.div`
 		border-radius: 8px;
 		background: var(--background-inputs);
 		border: 1px solid var(--span-inputs);
-		color: var(--span-inputs);
 		font-size: 14px;
 	}
 
