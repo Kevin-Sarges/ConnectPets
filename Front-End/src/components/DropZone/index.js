@@ -6,7 +6,7 @@ import { Container, PreviewImage } from './styles';
 
 
 function DropZone({ onFileUploaded }) {
-  const [files, setFiles] = useState('');
+  const [files, setFiles] = useState();
 
   const onDrop = useCallback(acceptedFiles => {
     const file = acceptedFiles[0];
@@ -14,10 +14,11 @@ function DropZone({ onFileUploaded }) {
     const fileUrl = URL.createObjectURL(file);
 
     setFiles(fileUrl);
-	onFileUploaded(file);
-  	}, [onFileUploaded]);
+	  onFileUploaded(file.name);
+  }, [onFileUploaded]);
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop,
+  const { getRootProps, getInputProps } = useDropzone({ 
+    onDrop,
     accept: 'image/*'
   });
 

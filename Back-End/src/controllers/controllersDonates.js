@@ -20,8 +20,6 @@ module.exports = {
 				name,
 				whatsapp,
 			} = req.body;
-			
-		console.log(req.file.originalname);	
 
 			const pet = {
 				image: req.file.originalname,
@@ -30,7 +28,7 @@ module.exports = {
 				race,
 				name,
 				whatsapp,
-				url: `http://localhost:3333/files/${urlImage}`
+				url: `http://localhost:3333/files/${req.file.filename}`
 			};
 
 			await knex('pets').insert(pet);
