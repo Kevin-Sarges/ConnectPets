@@ -14,7 +14,7 @@ function DropZone({ onFileUploaded }) {
     const fileUrl = URL.createObjectURL(file);
 
     setFiles(fileUrl);
-	  onFileUploaded(file.name);
+	  onFileUploaded(file);
   }, [onFileUploaded]);
 
   const { getRootProps, getInputProps } = useDropzone({ 

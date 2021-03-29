@@ -4,8 +4,12 @@ import { Container, Fieldset, Div, Inputs, Footer } from './styles';
 import DropZone from '../DropZone'
 import api from '../../services/api';
 
+
 function Form() {
-	const [selectFile, setSelectFile] = useState();
+	const [selectFile, setSelectFile] = useState({
+    name: File.name
+  });
+
 	const [formData, setFormData] = useState({
     age: '',
     sex: '',
@@ -38,7 +42,7 @@ function Form() {
     data.append('race', race);
     data.append('name', name);
     data.append('whatsapp', whatsapp);
-    data.append('image', selectFile);
+    data.append('image', selectFile.name);
     
     api.post('donate', formData)
       .then(function(response) {
@@ -55,7 +59,7 @@ function Form() {
     <Container>
       <form onSubmit={handleSubmit} enctype="multiipart/form-data">
         <Fieldset>
-	      <DropZone onFileUploaded={setSelectFile} />
+	        <DropZone onFileUploaded={setSelectFile} />
 
           <Div>
             <Inputs>
