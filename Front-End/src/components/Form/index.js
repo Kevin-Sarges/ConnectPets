@@ -7,7 +7,7 @@ import api from '../../services/api';
 
 function Form() {
 	const [selectFile, setSelectFile] = useState({
-    name: File.name
+    name: '',
   });
 
 	const [formData, setFormData] = useState({
@@ -42,7 +42,7 @@ function Form() {
     data.append('race', race);
     data.append('name', name);
     data.append('whatsapp', whatsapp);
-    data.append('image', selectFile.name);
+    data.append('image', selectFile);
     
     api.post('donate', formData)
       .then(function(response) {
@@ -86,6 +86,18 @@ function Form() {
               />
             </Inputs>
           </Div>
+
+          <Inputs>
+              <label for="image">Imagem</label>
+              <input 
+                name="image"
+                type="file"
+              
+                id="image"
+                onChange={handleChange}
+                require
+              />
+            </Inputs>
 
           <Inputs>
             <label for="race">Raça <span>(Se você não sabe coloque como "Desconhecida"!)</span></label>
