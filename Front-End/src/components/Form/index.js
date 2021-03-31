@@ -6,9 +6,7 @@ import api from '../../services/api';
 
 
 function Form() {
-	const [selectFile, setSelectFile] = useState({
-    name: '',
-  });
+	const [selectFile, setSelectFile] = useState();
 
 	const [formData, setFormData] = useState({
     age: '',
@@ -44,7 +42,7 @@ function Form() {
     data.append('whatsapp', whatsapp);
     data.append('image', selectFile);
     
-    api.post('donate', formData)
+    api.post('/donate', data)
       .then(function(response) {
         console.log(response);
         alert('Postagem realizada!!');
@@ -86,18 +84,6 @@ function Form() {
               />
             </Inputs>
           </Div>
-
-          <Inputs>
-              <label for="image">Imagem</label>
-              <input 
-                name="image"
-                type="file"
-              
-                id="image"
-                onChange={handleChange}
-                require
-              />
-            </Inputs>
 
           <Inputs>
             <label for="race">Raça <span>(Se você não sabe coloque como "Desconhecida"!)</span></label>

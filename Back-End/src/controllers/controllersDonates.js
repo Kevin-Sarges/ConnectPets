@@ -31,9 +31,9 @@ module.exports = {
 				url: `http://localhost:3333/files/${req.file.filename}`
 			};
 
-			await knex('pets').insert(pet);
+			const donate = await knex('pets').insert(pet);
 
-			return res.status(201).json({ 'dados': 'salvos' });
+			return res.status(201).json(donate);
 		} catch (error) {
 			next(error);
 		}
