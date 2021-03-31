@@ -9,11 +9,11 @@ function Form() {
 	const [selectFile, setSelectFile] = useState();
 
 	const [formData, setFormData] = useState({
-    age: '',
-    sex: '',
-    race: '',
-    name: '',
-    whatsapp: '',
+		age: '',
+		sex: '',
+		race: '',
+		name: '',
+		whatsapp: '',
   });
 
 	function handleChange(event) {
@@ -26,11 +26,11 @@ function Form() {
 		event.preventDefault();
 
     const {
-      age,
-      sex,
-      race,
-      name,
-      whatsapp
+		age,
+		sex,
+		race,
+		name,
+		whatsapp
     } = formData;
 
     const data = new FormData();
