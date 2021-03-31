@@ -14,43 +14,43 @@ function Form() {
 		race: '',
 		name: '',
 		whatsapp: '',
-  });
+	});
 
 	function handleChange(event) {
 		const { name, value } = event.target;
-	
+
 		setFormData({ ...formData, [name]: value });
 	}
- 
+
 	function handleSubmit(event) {
 		event.preventDefault();
 
-    const {
-		age,
-		sex,
-		race,
-		name,
-		whatsapp
-    } = formData;
+		const {
+			age,
+			sex,
+			race,
+			name,
+			whatsapp
+		} = formData;
 
-    const data = new FormData();
+		const data = new FormData();
 
-    data.append('age', age);
-    data.append('sex', sex);
-    data.append('race', race);
-    data.append('name', name);
-    data.append('whatsapp', whatsapp);
-    data.append('image', selectFile);
-    
-    api.post('/donate', data)
-      .then(function(response) {
-        console.log(response);
-        alert('Postagem realizada!!');
-      })
-      .catch(function(error) {
-        console.log(error);
-        alert('erro ao salvar!!');
-      });
+		data.append('age', age);
+		data.append('sex', sex);
+		data.append('race', race);
+		data.append('name', name);
+		data.append('whatsapp', whatsapp);
+		data.append('image', selectFile);
+
+		api.post('/donate', data)
+			.then(function(response) {
+			console.log(response);
+			alert('Postagem realizada!!');
+		})
+		.catch(function(error) {
+			console.log(error);
+			alert('erro ao salvar!!');
+		});
 	}
 
   return (
