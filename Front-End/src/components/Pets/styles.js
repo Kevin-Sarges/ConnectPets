@@ -16,7 +16,7 @@ export const Container = styled.div`
 `;
 
 export const PreviewImage = styled.img`
-	width: 70%;
+	width: 250px;
 	margin-bottom: 10px;
 `;
 
