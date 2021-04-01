@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Container, Fieldset, Div, Inputs, Footer } from './styles';
 import DropZone from '../../components/DropZone'
 import api from '../../services/api';
-
 
 function Form() {
 	const [selectFile, setSelectFile] = useState();
@@ -15,6 +15,8 @@ function Form() {
 		name: '',
 		whatsapp: '',
 	});
+
+  const navigete = useNavigate();
 
 	function handleChange(event) {
 		const { name, value } = event.target;
@@ -44,13 +46,12 @@ function Form() {
 
 		api.post('/donate', data)
 			.then(function(response) {
-			console.log(response);
-			alert('Postagem realizada!!');
-		})
-		.catch(function(error) {
-			console.log(error);
-			alert('erro ao salvar!!');
-		});
+       navigete('/');
+		  })
+      .catch(function(error) {
+        console.log(error);
+        alert('erro ao salvar!!');
+      });
 	}
 
   return (
