@@ -22,12 +22,13 @@ module.exports = {
 
 	fileFilter: (req, file, cb) => {
 		const typeImages = [
-			'image/jpge',
+			'image/jpeg',
 			'image/jpg',
+			'image/pjpeg',
 			'image/png',
 		];
 
-		if(typeImages.includes(file.mimetype)){
+		if(typeImages.includes(file.mimetype)) {
 			cb(null, true);
 		} else {
 			cb(new Error('Tipo de arquivo invalido'));

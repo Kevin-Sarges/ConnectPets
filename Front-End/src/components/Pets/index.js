@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-//import Dog from '../../assets/dog.jpg';
 import api from '../../services/api';
 
 import { Container, PreviewImage, Footer, Description, Button } from './styles';
@@ -33,10 +32,10 @@ class Pets extends Component {
 
 							<Footer>
 								<Description>
-									<p>Doador: { pet.name }</p>
-									<p>Raça: { pet.race }</p>
-									<p>Idade: { pet.age }</p>
-									<p>Sexo: { pet.sex }</p>
+									<p><b>Doador:</b> { pet.name }</p>
+									<p><b>Raça:</b> { pet.race }</p>
+									<p><b>Idade:</b> { pet.age }</p>
+									<p><b>Sexo:</b> { pet.sex }</p>
 								</Description>
 				
 								<footer>
