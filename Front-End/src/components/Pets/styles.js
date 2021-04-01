@@ -15,13 +15,9 @@ export const Container = styled.div`
 	}
 `;
 
-export const PreviewImage = styled.div`
+export const PreviewImage = styled.img`
+	width: 70%;
 	margin-bottom: 10px;
-
-	img {
-		width: 95%;
-		height: 200px;
-	}
 `;
 
 export const Footer = styled.footer`
