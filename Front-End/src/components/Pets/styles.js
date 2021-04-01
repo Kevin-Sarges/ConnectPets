@@ -32,6 +32,7 @@ export const Description = styled.div`
 `;
 
 export const Button = styled.a`
+	margin: 15px;
 	padding: 6px 10px;
 	display: flex;
 	align-items: center;
