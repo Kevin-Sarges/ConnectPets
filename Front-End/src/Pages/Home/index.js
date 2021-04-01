@@ -1,13 +1,19 @@
 import React from 'react';
 
-import Feed from '../../components/Feed';
+import Pets from '../../components/Pets';
 
-function Home() {
+import { Container, DivContainer, Feed } from './styles'
+
+function ContainerPets() {
   return (
-      <>
-        <Feed/>
-      </>
+    <Container>
+      <DivContainer>
+        <Feed>
+          <Pets/>
+        </Feed>
+      </DivContainer>
+    </Container>
   );
 }
 
-export default Home;
+export default ContainerPets;
