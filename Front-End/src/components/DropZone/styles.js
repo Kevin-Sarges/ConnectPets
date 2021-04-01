@@ -25,8 +25,8 @@ p:hover {
 export const PreviewImage = styled.div`
 	margin-top: 10px;
 	display: flex;
-  min-width: 0;
-  overflow: hidden;
+	min-width: 0;
+	overflow: hidden;
 
 	img {
 		max-width: 200px;

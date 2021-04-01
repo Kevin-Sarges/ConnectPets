@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //import Dog from '../../assets/dog.jpg';
 import api from '../../services/api';
 
-import { Container, StyleImage, Footer, Description, Button } from './styles';
+import { Container, PreviewImage, Footer, Description, Button } from './styles';
 
 class Pets extends Component {
 	state = {
@@ -29,7 +29,10 @@ class Pets extends Component {
 				{pets.map(pet => (
 					<>
 						<Container key={ pet.id }>
-							<StyleImage src={ pet.url } alt="Pets"/>
+							<PreviewImage>
+								<img src={ pet.url } alt="Pets"/>
+							</PreviewImage>
+
 							<Footer>
 								<Description>
 									<p>Doador: { pet.name }</p>
