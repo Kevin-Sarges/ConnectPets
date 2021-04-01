@@ -12,5 +12,6 @@ export const DivContainer = styled.div`
 
 export const Feed = styled.div`
 	margin: 0 auto;
-	flex-direction: column;
+	display: flex;
+	flex-direction: column-reverse;
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
 	margin-top: 70px;
 	margin-bottom: -50px;
-  padding: 20px;
+  	padding: 20px;
 	border-radius: 7px;
 	border: 1px solid var(--border-container);
 	background-color: var(--background-container);
@@ -15,9 +15,8 @@ export const Container = styled.div`
 	}
 `;
 
-export const StyleImage = styled.img`
-	width: 300px;
-	border-radius: 8px;
+export const PreviewImage = styled.img`
+	width: 70%;
 	margin-bottom: 10px;
 `;
 
