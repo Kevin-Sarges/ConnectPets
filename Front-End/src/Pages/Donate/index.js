@@ -45,13 +45,13 @@ function Form() {
 		data.append('image', selectFile);
 
 		api.post('/donate', data)
-			.then(function(response) {
-       navigete('/');
-		  })
-      .catch(function(error) {
-        console.log(error);
-        alert('erro ao salvar!!');
-      });
+			.then(function() {
+	       			navigete('/');
+			})
+	      		.catch(function(error) {
+				console.log(error);
+				alert('erro ao salvar!!');
+	      		});
 	}
 
   return (
