@@ -43,7 +43,6 @@ export const Inputs = styled.div`
 	> input{
 		padding: 8px;
 		border-radius: 8px;
-		background: var(--background-inputs);
 		border: 1px solid var(--span-inputs);
 		font-size: 14px;
 	}

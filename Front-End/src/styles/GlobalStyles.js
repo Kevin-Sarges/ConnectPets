@@ -3,14 +3,14 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 	:root{
 		--text-color-default: #4F4C4C;
-		--background-color-default: #F3FFEF;
+		--background-color-default: #e8eaed;
 
 		--background-header: linear-gradient(180deg, #24611F 0%, #67D93F 100%);
 		--text-header: #fff;
 		--hover-button-header: #67D93F;
 		--button-dropzone: #20A51D;
 
-		--background-container: #f4f0f0;
+		--background-container: #ffffff;
 		--border-container: #c4c4c4;
 
 		--text-color-form: #5c8999;
@@ -18,7 +18,6 @@ export default createGlobalStyle`
 		--button-form-hover: #0ca81b;
 		--color-button-form: #fff;
 
-		--background-inputs: #f0f0f0;
 		--span-inputs: #b4a9b9;
 
 		--text-color-button: #fff;
