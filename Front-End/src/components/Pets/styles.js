@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Text = styled.p`
+	margin-top: 200px;
+`;
+
 export const Container = styled.div`
 	margin-top: 70px;
 	margin-bottom: -50px;
