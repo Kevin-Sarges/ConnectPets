@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Nav = styled.header`
+export const Header = styled.header`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -17,19 +17,19 @@ export const Image = styled.img`
 	width: 30px;
   height: 31px;
 `;
-
+/*
 export const Hamburger = styled.div`
   flex-direction: column;
   cursor: pointer;
 
-  span{
+  span {
     height: 2px;
     width: 25px;
     background: white;
     margin-bottom: 4px;
     border-radius: 5px;
 
-    @media(max-width: 768px){
+    @media(max-width: 768px) {
       display: flex;
     }
   }
@@ -42,24 +42,23 @@ export const Menu = styled.div`
   position: relative;
   text-decoration: none;
 
-  > a{
+  > a {
     text-decoration: none;
   }
 
-  @media(max-width: 768px){
+  @media(max-width: 768px) {
     overflow: hidden;
     flex-direction:column;
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
 
-    > a{
+    > a {
       margin-top: 10px;
       margin-bottom: 10px;
     }
   }
 `;
-
 
 export const MenuLink = styled.a`
   padding: 10px 20px;
@@ -68,8 +67,9 @@ export const MenuLink = styled.a`
   text-decoration: none;
   color: var(--text-header);
 
-  &:hover{
+  &:hover {
     background: var(--hover-button-header);
     border-radius: 8px;
   }
 `;
+*/
