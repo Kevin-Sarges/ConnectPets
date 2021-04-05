@@ -6,7 +6,7 @@ import { StyledMenu, MenuLink } from './styles.js';
 function Menu({ open }) {
     return (
         <StyledMenu open={open}>
-        <Link to="/">
+          <Link to="/">
             <MenuLink>Home</MenuLink>
           </Link>
 

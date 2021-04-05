@@ -1,22 +1,25 @@
 import styled from 'styled-components';
 
 export const StyledMenu = styled.nav`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: #EFFFFA;
-	transform: ${({ open }) => open ? 'translateY(0)' : 'translateY(-100%)'};
-	height: 100vh;
-	text-align: left;
-	padding: 2rem;
-	position: absolute;
-	top: 0;
-	left: 0;
-	transition: transform 0.3s ease-in-out;
-
-	@media (max-width: 765px) {
-		width: 100%;
-	}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  > a{
+    text-decoration: none;
+  }
+  @media(max-width: 768px){
+    overflow: hidden;
+    flex-direction:column;
+    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    transition: max-height 0.3s ease-in;
+    width: 100%;
+    > a{
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 `;
 
 export const MenuLink = styled.a`

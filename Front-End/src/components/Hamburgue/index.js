@@ -4,7 +4,7 @@ import { StyledBurger } from './styles';
 
 function Hamburgue({ open, setOpen }) {
 	return (
-		<StyledBurger open={open} onClick={() => setOpen(!open)}>
+		<StyledBurger open={ open } onClick={() => setOpen(!open)}>
 			<div />
 			<div />
 			<div />
