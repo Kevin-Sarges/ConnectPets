@@ -2,22 +2,20 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/logo.svg';
-import { Nav, Image, Hamburger, Menu, MenuLink } from './styles';
+import { DivHeader, Image, Menu, MenuLink } from './styles';
 
-function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+import MenuHamburger from '../MenuHamburger';
+
+function Header() {
+  const [open, setOpen] = useState(false);
 
   return (
-		<Nav>
+		<DivHeader>
       <Image src={ Logo }/>
 
-      <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        <span/>
-        <span/>
-        <span/>
-      </Hamburger>
+      <MenuHamburger open={ open } setOpen={ setOpen } />
 
-      <Menu isOpen={isOpen}>
+      <Menu open={ open } setOpen={ setOpen }>
         <Link to="/">
           <MenuLink>Home</MenuLink>
         </Link>
@@ -30,8 +28,8 @@ function NavBar() {
           <MenuLink>Sobre o site</MenuLink>
         </Link>
       </Menu>
-    </Nav>
+    </DivHeader>
   );
 }
 
-export default NavBar;
+export default Header;
