@@ -10,25 +10,25 @@ function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-		<DivHeader>
-      <Image src={ Logo }/>
+	<DivHeader>
+	      <Image src={ Logo }/>
 
-      <MenuHamburger open={ open } setOpen={ setOpen } />
+	      <MenuHamburger open={ open } setOpen={ setOpen } />
 
-      <Menu open={ open } setOpen={ setOpen }>
-        <Link to="/">
-          <MenuLink>Home</MenuLink>
-        </Link>
+	      <Menu open={ open } setOpen={ setOpen }>
+		<Link to="/">
+		  <MenuLink>Home</MenuLink>
+		</Link>
 
-        <Link to="/donate">
-          <MenuLink>Doar</MenuLink>
-        </Link>
+		<Link to="/donate">
+		  <MenuLink>Doar</MenuLink>
+		</Link>
 
-        <Link to="/#">
-          <MenuLink>Sobre o site</MenuLink>
-        </Link>
-      </Menu>
-		</DivHeader>
+		<Link to="/#">
+		  <MenuLink>Sobre o site</MenuLink>
+		</Link>
+	      </Menu>
+	</DivHeader>
   );
 }
 
