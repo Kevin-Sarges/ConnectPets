@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const DivHeader = styled.header`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
@@ -18,21 +18,6 @@ export const Image = styled.img`
   height: 31px;
 `;
 
-export const Hamburger = styled.div`
-  flex-direction: column;
-  cursor: pointer;
-  span{
-    height: 2px;
-    width: 25px;
-    background: white;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    @media(max-width: 768px){
-      display: flex;
-    }
-  }
-`;
-
 export const Menu = styled.div`
   display: flex;
   justify-content: space-between;
@@ -45,9 +30,10 @@ export const Menu = styled.div`
   @media(max-width: 768px){
     overflow: hidden;
     flex-direction:column;
-    max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
+    max-height: ${({ open }) => (open ? "300px" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
+    
     > a{
       margin-top: 10px;
       margin-bottom: 10px;
