@@ -28,7 +28,7 @@ function Header() {
           <MenuLink>Sobre o site</MenuLink>
         </Link>
       </Menu>
-    </DivHeader>
+		</DivHeader>
   );
 }
 
