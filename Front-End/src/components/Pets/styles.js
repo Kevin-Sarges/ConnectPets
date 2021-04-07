@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const Text = styled.p`
-	margin-top: 200px;
-`;
-
 export const Container = styled.div`
 	margin-top: 70px;
 	margin-bottom: -50px;
@@ -29,6 +25,14 @@ export const Footer = styled.footer`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media(max-width: 325px) {
+		font-size: 13px;
+	}
+
+	@media(max-width: 318px) {
+		font-size: 12px;
+	}
 `;
 
 export const Description = styled.div`
@@ -46,7 +50,17 @@ export const Button = styled.a`
 	color: var(--text-color-button);
 	background: var(--button-home);
 	cursor: pointer;
+
 	&:hover{
 		background: var(--button-home-hover);
 	}
+
+	@media(max-width: 349px) {
+		margin: 0;
+	}
 `;
+
+export const Text = styled.p`
+	margin-top: 200px;
+`;
+
