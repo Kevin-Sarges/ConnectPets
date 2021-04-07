@@ -45,9 +45,9 @@ function Form() {
 		data.append('image', selectFile);
 
 		api.post('/donate', data)
-			.then(function() {
+		.then(function() {
 	       		navigete('/');
-			})
+		})
 	      	.catch(function(error) {
 				console.log(error);
 				alert('erro ao salvar!!');
