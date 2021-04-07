@@ -24,17 +24,20 @@ export const Menu = styled.div`
   align-items: center;
   position: relative;
   text-decoration: none;
+
   > a{
     text-decoration: none;
   }
-  @media(max-width: 768px){
+
+  @media(max-width: 768px) {
+    padding: ${({ open }) => (open ? '20px': '0')};
     overflow: hidden;
     flex-direction:column;
     max-height: ${({ open }) => (open ? "300px" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
     
-    > a{
+    > a {
       margin-top: 10px;
       margin-bottom: 10px;
     }
@@ -48,6 +51,7 @@ export const MenuLink = styled.a`
   text-align: center;
   text-decoration: none;
   color: var(--text-header);
+
   &:hover{
     background: var(--hover-button-header);
     border-radius: 8px;

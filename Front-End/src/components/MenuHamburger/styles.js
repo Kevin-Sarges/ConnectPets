@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
 export const StyledBurger = styled.div`
-  flex-direction: column;
-  cursor: pointer;
+	flex-direction: column;
+	cursor: pointer;
+	margin-top: 7px;
   
-  span{
+	span {
 		position: relative;
-    height: 2px;
-    width: 25px;
-    background: white;
-    margin-bottom: 4px;
-    border-radius: 5px;
+		height: 2px;
+		width: 25px;
+		background: white;
+		margin-bottom: 4px;
+		border-radius: 5px;
 		transition: all 0.3s linear;
 		transform-origin: 1px;
 
@@ -29,8 +30,8 @@ export const StyledBurger = styled.div`
 			top: 2px;
 		}
 
-    @media(max-width: 768px){
-      display: flex;
-    }
-  }
+		@media(max-width: 768px){
+			display: flex;
+		}
+	}
 `;

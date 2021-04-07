@@ -39,11 +39,10 @@ class Pets extends Component {
 											<p><b>Sexo:</b> { pet.sex }</p>
 										</Description>
 
-										<footer>
-											<Button href={ `https://api.whatsapp.com/send?1=pt_BR&phone=${pet.whatsapp}&text=Desejo adotar pet` }>
-												Entre em contato
-											</Button>
-										</footer>
+										
+										<Button href={ `https://api.whatsapp.com/send?1=pt_BR&phone=${pet.whatsapp}&text=Desejo adotar pet` }>
+											Entre em contato
+										</Button>
 									</Footer>
 								</Container> 
 							))}
