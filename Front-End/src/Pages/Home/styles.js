@@ -15,3 +15,7 @@ export const Feed = styled.div`
 	display: flex;
 	flex-direction: column-reverse;
 `;
+
+export const Text = styled.p`
+	margin-top: 200px;
+`;
