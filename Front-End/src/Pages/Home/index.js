@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 
 import Pets from '../../components/Pets';
 
-import { Container, DivContainer, Feed, Text } from './styles'
+import { Container, DivContainer, Feed } from './styles'
 
 function ContainerPets() {
-  const [ pets ] = useState(true);
-
   return (
     <Container>
       <DivContainer>
         <Feed>
-          { pets
-            ? <Text>Ainda não tem pets para adotar</Text>
-            : <Pets />
-          }
+          <Pets />
         </Feed>
       </DivContainer>
     </Container>
