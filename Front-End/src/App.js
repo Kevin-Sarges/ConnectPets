@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     setLoading(false);
-  });
+  }, []);
 
   return (
     <>
