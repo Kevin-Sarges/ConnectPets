@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import Pets from '../../components/Pets';
 
-import { Container, DivContainer, Feed, Text } from './styles'
+import { Container, DivContainer, Feed } from './styles'
 
-function ContainerPets() {
-  const [pets, setPets] = useState(true);
-
-  useEffect(() => {
-    setPets(false);
-  }, []);
-
+function Home() {
   return (
     <Container>
       <DivContainer>
         <Feed>
-          { pets && <Pets /> }
-          { !!pets && <Text>Ainda não tem pets para doar!</Text> }
+          <Pets />
         </Feed>
       </DivContainer>
     </Container>
   );
 }
 
-export default ContainerPets;
+export default Home;
