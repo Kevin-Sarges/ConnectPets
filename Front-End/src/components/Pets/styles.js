@@ -63,4 +63,3 @@ export const Button = styled.a`
 export const Text = styled.p`
 	margin-top: 200px;
 `;
-

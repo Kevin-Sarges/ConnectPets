@@ -1,57 +1,56 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import api from '../../services/api';
 
-import { Text, Container, PreviewImage, Footer, Description, Button } from './styles';
+import { Container, PreviewImage, Footer, Description, Button, Text } from './styles';
 
-class Pets extends Component {
-	state = {
-		pets: [],
-	}
+function Pets() {
+	const [pets, setPets] = useState([]);
+	const [isLoading, setIsLoading] = useState();
+	
+ 	useEffect(() => {
+		async function fetchDate() {
+			try {
+				const response = await api.get('/');
 
-	async componentDidMount() {
-		try {
-			const response = await api.get('/');
-
-			this.setState({ pets: response.data });
-		} catch (error) {
-			console.log(error);
+				setPets(response.data);
+				setIsLoading();
+			} catch (error) {
+				console.log(error);
+			}
 		}
-	}
 
-	render() {
+		fetchDate();
+	}, []);
 
-		const { pets } = this.state;
+	return (
+		<>
+			{ !isLoading && !pets.length && <Text>Ainda não tem pets para adotar!!😢</Text> }
+			{ !isLoading && pets.length > 0 &&
+				<>
+					{ pets.map (pet => (
+						<Container key={ pet.id }>
+							<PreviewImage src={ pet.url } alt="Pets" />
 
-		return (
-			<>
-				{ pets
-					?	<>
-							{pets.map(pet => (
-								<Container key={ pet.id }>
-									<PreviewImage src={ pet.url } alt="Pets" />
+							<Footer>
+								<Description>
+									<p><b>Doador:</b> { pet.name }</p>
+									<p><b>Raça:</b> { pet.race }</p>
+									<p><b>Idade:</b> { pet.age }</p>
+									<p><b>Sexo:</b> { pet.sex }</p>
+								</Description>
 
-									<Footer>
-										<Description>
-											<p><b>Doador:</b> { pet.name }</p>
-											<p><b>Raça:</b> { pet.race }</p>
-											<p><b>Idade:</b> { pet.age }</p>
-											<p><b>Sexo:</b> { pet.sex }</p>
-										</Description>
-
-										
-										<Button href={ `https://api.whatsapp.com/send?1=pt_BR&phone=${pet.whatsapp}&text=Desejo adotar pet` }>
-											Entre em contato
-										</Button>
-									</Footer>
-								</Container> 
-							))}
-						</>
-					: <Text>Ainda não tem pets para adotar</Text>
-				}
-			</>
-		);
-	}
+								
+								<Button href={ `https://api.whatsapp.com/send?1=pt_BR&phone=${pet.whatsapp}&text=Desejo adotar pet` }>
+									Entre em contato
+								</Button>
+							</Footer>
+						</Container>
+					))}
+				</>
+			}
+		</>
+	);
 }
 
 export default Pets;

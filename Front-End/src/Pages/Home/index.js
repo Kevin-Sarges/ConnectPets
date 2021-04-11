@@ -4,8 +4,7 @@ import Pets from '../../components/Pets';
 
 import { Container, DivContainer, Feed } from './styles'
 
-function ContainerPets() {
-
+function Home() {
   return (
     <Container>
       <DivContainer>
@@ -17,4 +16,4 @@ function ContainerPets() {
   );
 }
 
-export default ContainerPets;
+export default Home;
